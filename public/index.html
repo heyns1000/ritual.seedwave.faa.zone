@@ -658,7 +658,7 @@
             </h1>
             <p class="opacity-90 mt-2">Connecting Heritage, Belief, and Digital Protocols</p>
             <nav class="mt-4">
-                <a href="../../admin-portal.html" class="text-white hover:text-ritenest-accent transition-colors mx-3 text-lg">&larr; Back to Admin Portal</a>
+                <a href="https://ritual.seedwave.faa.zone/index" class="text-white hover:text-ritenest-accent transition-colors mx-3 text-lg">&larr; Back to Main Index</a>
             </nav>
         </div>
     </header>
@@ -986,6 +986,18 @@
         <div class="container mx-auto px-6">
             <p class="text-sm">© 2025 FAA.ZONE™. All rights reserved.</p>
             <p class="text-xs opacity-70 mt-2">ScrollGrid · PulseTrade Certified · TreatyMesh Validated</p>
+            <div class="mt-4 space-x-4">
+                <a href="https://ritual.seedwave.faa.zone/privacy" class="text-white hover:text-ritenest-accent text-xs">Privacy</a>
+                <a href="https://ritual.seedwave.faa.zone/terms" class="text-white hover:text-ritenest-accent text-xs">Terms</a>
+                <a href="https://ritual.seedwave.faa.zone/contact" class="text-white hover:text-ritenest-accent text-xs">Contact</a>
+                <a href="https://ritual.seedwave.faa.zone/copyright" class="text-white hover:text-ritenest-accent text-xs">Copyright</a>
+                <a href="https://ritual.seedwave.faa.zone/developers" class="text-white hover:text-ritenest-accent text-xs">Developers</a>
+                <a href="https://ritual.seedwave.faa.zone/vaultmesh" class="text-white hover:text-ritenest-accent text-xs">VaultMesh</a>
+                <a href="https://ritual.seedwave.faa.zone/fruitful" class="text-white hover:text-ritenest-accent text-xs">Fruitful</a>
+                <a href="https://ritual.seedwave.faa.zone/faa.zone" class="text-white hover:text-ritenest-accent text-xs">FAA.ZONE</a>
+                <a href="https://ritual.seedwave.faa.zone/about" class="text-white hover:text-ritenest-accent text-xs">About</a>
+                <a href="https://ritual.seedwave.faa.zone/accessibility" class="text-white hover:text-ritenest-accent text-xs">Accessibility</a>
+            </div>
         </div>
     </footer>
 
@@ -1107,38 +1119,42 @@
         });
 
         const ritualCultureBrands = [
-            { name: 'RiteNest™', description: 'A core protocol enabling secure digital interfaces for traditional practices within the Ritual & Culture sector.' },
-            { name: 'PulseSpirit™', description: 'Focuses on the energetic and spiritual dimensions of rituals, offering protocols for digital resonance.' },
-            { name: 'ClanScroll™', description: 'Dedicated to the digital preservation and management of ancestral records and lineage history.' },
-            { name: 'CultureGrid™', description: 'Provides a decentralized network for mapping and interacting with global cultural data and practices.' },
-            { name: 'MythLoop™', description: 'Specializes in the digital storytelling and reinterpretation of myths and folklore for contemporary audiences.' },
-            { name: 'AuraDrop™', description: 'A platform for tokenizing and sharing unique cultural expressions and digital artifacts.' },
-            { name: 'CeremPath™', description: 'Offers guided digital pathways and tools for learning and participating in various ceremonial practices.' },
-            { name: 'EchoGlyph™', description: 'Focuses on the digital reconstruction and interactive display of ancient symbols and cultural markings.' },
-            { name: 'TradVault™', description: 'A secure digital vault for storing and authenticating traditional knowledge and practices.' },
-            { name: 'LineageClaim™', description: 'Enables individuals to digitally verify and assert their connection to specific cultural lineages or traditions.' },
-            { name: 'SymbolMap™', description: 'An interactive mapping tool for exploring the geographical distribution and cultural significance of symbols.' },
-            { name: 'AncestorSync™', description: 'Synchronizes personal data with historical records to help individuals connect with their ancestral heritage.' },
-            { name: 'SoulPanel™', description: 'A personalized dashboard for tracking and engaging with one\'s spiritual and cultural development.' },
-            { name: 'ClanRoot™', description: 'A digital platform for connecting members of a specific clan or tribal group, fostering community.' },
-            { name: 'EchoRitual™', description: 'Facilitates the digital re-enactment and immersive experience of historical rituals.' },
-            { name: 'TotemCast™', description: 'Enables the creation and sharing of digital totems and symbolic representations of cultural identity.' },
-            { name: 'RiteClaim™', description: 'A protocol for digitally registering and protecting unique cultural rites and intellectual property.' },
-            { name: 'GlyphVault™', description: 'A secure repository for digitized glyphs, ancient texts, and symbolic languages.' },
-            { name: 'CultureNest™', description: 'A community-driven platform for sharing and nurturing local cultural initiatives and projects.' },
-            { name: 'SpiritBeam™', description: 'Utilizes light and sound protocols to create immersive digital environments for spiritual contemplation.' },
-            { name: 'Airbnb Experiences', description: 'Digitizes local cultural experiences, connecting travelers with authentic local life.' },
-            { name: 'Headspace / Calm', description: 'Modernizes mindfulness and meditation through accessible digital platforms.' },
-            { name: 'Etsy (Handmade/Vintage)', description: 'Provides a global platform for artisans and vintage sellers, preserving traditional crafts and unique goods.' },
-            { name: 'TED (Conferences/TEDx)', description: 'Disseminates "ideas worth spreading" globally, fostering intellectual curiosity and cross-disciplinary understanding.' },
-            { name: 'Local Harvest', description: 'A digital platform connecting consumers directly with local farmers and sustainable food sources.' },
-            { name: 'Ancestry.com', description: 'A leading online platform for genealogical research and DNA testing, helping individuals discover their family history.' },
-            { name: 'Duolingo', description: 'A popular language-learning app that makes education accessible and engaging through gamification.' },
-            { name: 'Slow Food Movement', description: 'A global grassroots organization promoting local food and traditional cooking, countering fast food culture.' }
+            { name: 'RiteNest™', description: 'A core protocol enabling secure digital interfaces for traditional practices within the Ritual & Culture sector.', route: 'ritenest-dashboard.html' },
+            { name: 'CultureMesh', description: 'A brand focused on connecting diverse cultural expressions and traditions through a unified digital platform.', route: 'sectors/culturemesh/index.html' },
+            { name: 'PulseSpirit™', description: 'Focuses on the energetic and spiritual dimensions of rituals, offering protocols for digital resonance.', route: 'sectors/pulsespirit/index.html' },
+            { name: 'ClanScroll™', description: 'Dedicated to the digital preservation and management of ancestral records and lineage history.', route: 'sectors/clanscroll/index.html' },
+            { name: 'MythLoop™', description: 'Specializes in the digital storytelling and reinterpretation of myths and folklore for contemporary audiences.', route: 'sectors/mythloop/index.html' },
+            { name: 'AuraDrop™', description: 'A platform for tokenizing and sharing unique cultural expressions and digital artifacts.', route: 'sectors/auradrop/index.html' },
+            { name: 'CeremPath™', description: 'Offers guided digital pathways and tools for learning and participating in various ceremonial practices.', route: 'sectors/cerempath/index.html' },
+            { name: 'EchoGlyph™', description: 'Focuses on the digital reconstruction and interactive display of ancient symbols and cultural markings.', route: 'sectors/echoglyph/index.html' },
+            { name: 'TradVault™', description: 'A secure digital vault for storing and authenticating traditional knowledge and practices.', route: 'sectors/tradvault/index.html' },
+            { name: 'LineageClaim™', description: 'Enables individuals to digitally verify and assert their connection to specific cultural lineages or traditions.', route: 'sectors/lineageclaim/index.html' },
+            { name: 'SymbolMap™', description: 'An interactive mapping tool for exploring the geographical distribution and cultural significance of symbols.', route: 'sectors/symbolmap/index.html' },
+            { name: 'AncestorSync™', description: 'Synchronizes personal data with historical records to help individuals connect with their ancestral heritage.', route: 'sectors/ancestorsync/index.html' },
+            { name: 'SoulPanel™', description: 'A personalized dashboard for tracking and engaging with one\'s spiritual and cultural development.', route: 'sectors/soulpanel/index.html' },
+            { name: 'ClanRoot™', description: 'A digital platform for connecting members of a specific clan or tribal group, fostering community.', route: 'sectors/clanroot/index.html' },
+            { name: 'EchoRitual™', description: 'Facilitates the digital re-enactment and immersive experience of historical rituals.', route: 'sectors/echoritual/index.html' },
+            { name: 'TotemCast™', description: 'Enables the creation and sharing of digital totems and symbolic representations of cultural identity.', route: 'sectors/totemcast/index.html' },
+            { name: 'RiteClaim™', description: 'A protocol for digitally registering and protecting unique cultural rites and intellectual property.', route: 'sectors/riteclaim/index.html' },
+            { name: 'GlyphVault™', description: 'A secure repository for digitized glyphs, ancient texts, and symbolic languages.', route: 'sectors/glyphvault/index.html' },
+            { name: 'CultureNest™', description: 'A community-driven platform for sharing and nurturing local cultural initiatives and projects.', route: 'sectors/culturenest/index.html' },
+            { name: 'SpiritBeam™', description: 'Utilizes light and sound protocols to create immersive digital environments for spiritual contemplation.', route: 'sectors/spiritbeam/index.html' },
+            { name: 'Airbnb Experiences', description: 'Digitizes local cultural experiences, connecting travelers with authentic local life.', route: 'sectors/airbnb-experiences/index.html' },
+            { name: 'Headspace / Calm', description: 'Modernizes mindfulness and meditation through accessible digital platforms.', route: 'sectors/headspace-calm/index.html' },
+            { name: 'Etsy (Handmade/Vintage)', description: 'Provides a global platform for artisans and vintage sellers, preserving traditional crafts and unique goods.', route: 'sectors/etsy/index.html' },
+            { name: 'TED (Conferences/TEDx)', description: 'Disseminates "ideas worth spreading" globally, fostering intellectual curiosity and cross-disciplinary understanding.', route: 'sectors/ted/index.html' },
+            { name: 'Local Harvest', description: 'A digital platform connecting consumers directly with local farmers and sustainable food sources.', route: 'sectors/local-harvest/index.html' },
+            { name: 'Ancestry.com', description: 'A leading online platform for genealogical research and DNA testing, helping individuals discover their family history.', route: 'sectors/ancestry-com/index.html' },
+            { name: 'Duolingo', description: 'A popular language-learning app that makes education accessible and engaging through gamification.', route: 'sectors/duolingo/index.html' },
+            { name: 'Slow Food Movement', description: 'A global grassroots organization promoting local food and traditional cooking, countering fast food culture.', route: 'sectors/slow-food-movement/index.html' }
         ];
 
         const ritualCultureSubNodes = {
-            'RiteNest™': ['TotemTrack', 'VaultSpirit', 'GlyphTag', 'ScrollLoop'],
+            'RiteNest™': ['TotemTrack', 'VaultSpirit', 'GlyphTag', 'ScrollLoop'], // These are generic sub-nodes, not part of the ecosystem map for specific routes
+            'CultureMesh': [
+                { name: 'TraditionVault', route: 'sectors/culturemesh/traditionvault/index.html' },
+                { name: 'EthnoSync', route: 'sectors/culturemesh/ethnosync/index.html' }
+            ],
             'PulseSpirit™': ['ClanPath', 'EchoTotem', 'PulseMyth', 'ScrollClaim'],
             'ClanScroll™': ['CultureCast', 'VaultClaim', 'RiteMark', 'TradEcho'],
             'CultureGrid™': ['LoopTotem', 'ClaimClan', 'VaultGlyph', 'SymbolTrack'],
@@ -1167,6 +1183,7 @@
             'Duolingo': ['LanguageCourses', 'GamifiedLessons', 'PracticeCommunity'],
             'Slow Food Movement': ['ArkOfTaste', 'FoodCommunities', 'TerraMadre']
         };
+
 
         const globalCulturalEntities = [
             { name: 'Japan', type: 'Country', description: 'A nation known for its profound blend of ancient traditions and cutting-edge innovation, fostering social harmony and cultural resilience.' },
@@ -1226,7 +1243,7 @@
                 keyLanguages: ["isiZulu", "Sesotho", "Setswana", "Sepedi", "Xitsonga", "isiNdebele", "Afrikaans", "English", "Tshivenda", "isiXhosa"],
                 majorSectors: ["Financial Services", "Manufacturing", "Mining (gold, platinum)", "Technology & Innovation", "Retail & Trade", "Logistics", "Automotive"],
                 localTradeFocus: "Diverse retail, fashion (including streetwear), informal trade, technology services, arts and crafts markets, food markets.",
-                artsCultureHighlights: "Johannesburg Art Fair, Soweto Theatre, Maboneng Precinct, vibrant music and dance scenes, Cradle of Humankind (UNESCO site).",
+                artsCultureHighlights: "Johannesburg Art Fair, Soweto Theatre, Maboneng Precinct, vibrant music and dance scenes, Cradle of HumanKind (UNESCO site).",
                 sportsHighlights: "Football (Kaizer Chiefs, Orlando Pirates, Mamelodi Sundowns), Rugby (Lions, Bulls), Cricket (Highveld Lions), FNB Stadium, Ellis Park Stadium.",
                 municipalities: {
                     metropolitan: ["City of Johannesburg Metropolitan Municipality", "City of Tshwane Metropolitan Municipality", "Ekurhuleni Metropolitan Municipality"],
@@ -1572,9 +1589,9 @@
                 { id: 'prod4', name: 'Ndebele Mural Art Print', description: 'High-quality print of a vibrant Ndebele house mural, showcasing unique geometric patterns from Mpumalanga.', area: 'Mpumalanga', type: 'Handmade Art' }
             ],
             municipalOpportunities: [
-                { id: 'opp1', title: 'Cultural Festival Vendor Call - Cape Town', description: 'Cape Town Municipality seeking traditional artisans for annual cultural festival. Deadline: 30 July 2025.', municipality: 'Cape Town', region: 'Western Cape, South Africa' },
-                { id: 'opp2', title: 'Street Art Initiative - Gaborone', description: 'Gaborone City Council inviting street artists and muralists for urban revitalization project. Focus on local themes. Deadline: 15 August 2025.', municipality: 'Gaborone', region: 'South-East, Botswana' },
-                { id: 'opp3', title: 'Heritage Craft Market - Maseru', description: 'Maseru City Council organizing a monthly heritage craft market. Seeking handmade jewelry, pottery, and textiles. Ongoing applications.', municipality: 'Maseru', region: 'Maseru, Lesotho' }
+                { id: 'opp1', title: 'Cultural Festival Vendor Call - Cape Town', description: 'Cape Town Municipality seeking traditional artisans for annual cultural festival. Deadline: 30 July 2025.', municipality: 'City of Cape Town Metropolitan Municipality', region: 'Western Cape, South Africa' },
+                { id: 'opp2', title: 'Street Art Initiative - Gaborone', description: 'Gaborone City Council inviting street artists and muralists for urban revitalization project. Focus on local themes. Deadline: 15 August 2025.', municipality: 'Gaborone City Council', region: 'South-East, Botswana' },
+                { id: 'opp3', title: 'Heritage Craft Market - Maseru', description: 'Maseru City Council organizing a monthly heritage craft market. Seeking handmade jewelry, pottery, and textiles. Ongoing applications.', municipality: 'Maseru City Council', region: 'Maseru, Lesotho' }
             ]
         };
 
@@ -1599,24 +1616,29 @@
                         const card = document.createElement('div');
                         card.className = 'brand-card';
 
-                        const subNodes = ritualCultureSubNodes[brand.name] || [];
+                        const subNodes = ritualCultureSubNodes[brand.name]; // Get sub-nodes for this brand
                         let subNodesHtml = '';
-                        if (subNodes.length > 0) {
+                        if (subNodes && subNodes.length > 0) {
+                            // Check if subNodes are objects with a route (like CultureMesh) or just strings
+                            const isObjectSubNode = typeof subNodes[0] === 'object' && subNodes[0] !== null && 'route' in subNodes[0];
+
                             subNodesHtml = `
                                 <ul class="list-disc list-inside text-sm text-ritenest-muted-text space-y-1 mt-4">
-                                    ${subNodes.map(node => `<li>${node}</li>`).join('')}
+                                    ${subNodes.map(node => {
+                                        if (isObjectSubNode) {
+                                            return `<li><a href="https://ritual.seedwave.faa.zone/${node.route}" class="text-ritenest-muted-text hover:text-ritenest-primary">${node.name}</a></li>`;
+                                        } else {
+                                            return `<li>${node}</li>`; // For generic sub-nodes without specific routes
+                                        }
+                                    }).join('')}
                                 </ul>
                             `;
                         } else {
                             subNodesHtml = '<p class="text-sm text-ritenest-muted-text mt-4">No specific sub-nodes listed.</p>';
                         }
 
-                        let discoverMoreLink = '#';
-                        if (brand.name === 'RiteNest™') {
-                            discoverMoreLink = '../../ritenest-dashboard.html';
-                        } else {
-                            discoverMoreLink = `/${brand.name.toLowerCase().replace(/™/g, '').replace(/\s/g, '-')}/index.html`;
-                        }
+                        // Use the brand.route directly, prepending the base URL
+                        const brandRoute = `https://ritual.seedwave.faa.zone/${brand.route}`;
 
                         card.innerHTML = `
                             <div>
@@ -1624,7 +1646,7 @@
                                 <p>${brand.description}</p>
                                 ${subNodesHtml}
                             </div>
-                            <a href="${discoverMoreLink}" class="mt-6 self-start px-6 py-2 primary-btn font-semibold rounded-full text-base">
+                            <a href="${brandRoute}" class="mt-6 self-start px-6 py-2 primary-btn font-semibold rounded-full text-base">
                                 Discover More
                             </a>
                         `;
@@ -1635,7 +1657,7 @@
 
             if (entitiesContainer) {
                 if (globalCulturalEntities.length === 0) {
-                    entitiesContainer.innerHTML = '<p class="text-center text-ritenest-muted-text col-span-full">No global entities currently listed for this sector.</p>';
+                    entitiesContainer.innerHTML = '<p class="text-center text-ritenest-muted-text col-span-full">No global entities currently listed for this.</p>';
                 } else {
                     globalCulturalEntities.forEach(entity => {
                         const card = document.createElement('div');
@@ -1810,3 +1832,4 @@
     </script>
 </body>
 </html>
+
