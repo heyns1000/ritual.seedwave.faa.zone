@@ -5,51 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>☯ FAA.ZONE™ Ritual & Culture Sector Index</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* RiteNest Specific Color Palette - Adopted for this sector index */
+        :root {
+            --ritenest-primary: #047857; /* Deep forest green */
+            --ritenest-secondary: #34d399; /* Medium green */
+            --ritenest-accent: #10b981; /* Teal green */
+            --ritenest-light-bg: #f0fdf4; /* Very light green */
+            --ritenest-card-bg: #d1fae5; /* Lighter green for cards */
+            --ritenest-dark-text: #1f2937; /* Dark gray for primary text */
+            --ritenest-muted-text: #4b5563; /* Muted gray for secondary text */
+            --ritenest-border: #a7f3d0; /* Light green border */
+            --ritenest-button-hover: #065f46; /* Darker green on hover */
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* Light off-white background */
-            color: #334155; /* Dark slate gray for primary text */
+            background-color: var(--ritenest-light-bg); /* Light green background */
+            color: var(--ritenest-dark-text); /* Dark text */
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
-        .header-bg {
-            background-color: #5d4037; /* Earthy brown, complementary to ritual theme */
-        }
-        .brand-text {
-            color: #5d4037; /* Deep brown for brand name */
-        }
-        .gradient-heading {
-            background: linear-gradient(to right, #795548, #a1887f); /* Brownish gradient for main headings */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
-        }
-        .card-shadow {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        .feature-icon {
-            color: #8d6e63; /* A lighter brown for icons */
-        }
-        .footer-bg {
-            background-color: #3e2723; /* Darker brown for footer */
-            color: #d7ccc8;
-        }
-        .primary-btn {
-            background-color: #8d6e63; /* Medium brown */
+
+        /* Header - Styled like RiteNest header */
+        header {
+            background-color: var(--ritenest-primary); /* Deep green header */
             color: white;
-            transition: background-color 0.2s ease, transform 0.2s ease;
+            padding-top: 1.2rem;
+            padding-bottom: 1.2rem;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 50;
         }
-        .primary-btn:hover {
-            background-color: #6d4c41; /* Darker brown on hover */
-            transform: translateY(-1px);
+        header h1 {
+            font-weight: 800;
+            font-size: 2.5rem; /* Larger for sector title */
+            letter-spacing: -0.03em;
         }
-        /* Hero section specific styles for the canvas background */
+        header p {
+            color: #d1fae5; /* Lighter green for subtitle */
+        }
+        header nav a {
+            color: #d1fae5;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            transition: all 0.2s ease-in-out;
+            position: relative;
+        }
+        header nav a:hover {
+            color: white;
+            background-color: var(--ritenest-button-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section - Adapted from RiteNest hero */
         .hero-section-with-canvas {
             position: relative;
-            overflow: hidden; /* Ensure particles don't spill */
-            background-color: #f0f0f0; /* Default if canvas fails to load */
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--ritenest-primary), var(--ritenest-secondary), var(--ritenest-accent)); /* Green gradient */
+            min-height: 70vh; /* Slightly less tall than full hero */
+            padding: 8rem 2rem;
+            border-bottom-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+            color: white;
+            animation: fadeInScale 1s ease-out;
         }
         .hero-canvas-overlay {
             position: absolute;
@@ -57,88 +89,254 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 1; /* Below content */
-            pointer-events: none; /* Allow clicks to pass through to elements below */
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.6; /* More visible particles */
         }
         .hero-content-z-2 {
             position: relative;
-            z-index: 2; /* Above canvas */
+            z-index: 2;
         }
+        .gradient-heading {
+            background: linear-gradient(90deg, #fcd34d, #f97316); /* Warm gradient for contrast */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            font-size: 4.5rem;
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            line-height: 1.05;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .hero-section-with-canvas p {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #d1fae5;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+            max-width: 900px;
+        }
+        .primary-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(90deg, var(--ritenest-secondary), var(--ritenest-accent)); /* Green gradient */
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.15rem;
+            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .primary-btn:hover {
+            filter: brightness(1.2);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3), 0 0 25px rgba(52, 211, 153, 0.8);
+        }
+
+        /* Sector Overview Metadata - Styled like RiteNest dashboard cards */
+        .metadata-section {
+            padding: 3rem 2rem;
+            background-color: var(--ritenest-light-bg);
+            box-shadow: inset 0 5px 20px rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(4, 120, 87, 0.1);
+        }
+        .metadata-card {
+            background-color: var(--ritenest-card-bg); /* Lighter green for cards */
+            padding: 1.5rem;
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Soft shadow */
+            border: 1px solid var(--ritenest-border); /* Light green border */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .metadata-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .metadata-card p.text-sm {
+            color: var(--ritenest-muted-text);
+        }
+        .metadata-card p.text-2xl {
+            color: var(--ritenest-primary); /* Deep green for main values */
+            font-weight: 700;
+        }
+        .metadata-card p.text-xl {
+            color: var(--ritenest-dark-text);
+            font-weight: 600;
+        }
+        .metadata-card .text-green-600 { /* For Security Rating */
+            color: var(--ritenest-accent); /* Teal green for positive status */
+        }
+
+        /* Core Brands & Sub-Nodes Section - Adapted from RiteNest feature cards */
+        #sector-brands {
+            padding: 6rem 2rem;
+            background-color: #e0fdf0; /* Slightly different light green for contrast */
+            box-shadow: inset 0 5px 20px rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(4, 120, 87, 0.1);
+        }
+        #sector-brands h3 {
+            color: var(--ritenest-dark-text);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 2.5rem;
+            font-size: 2.8rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        #sector-brands p.text-center {
+            color: var(--ritenest-muted-text);
+            font-size: 1.15rem;
+            line-height: 1.6;
+        }
+        .brand-card {
+            background-color: var(--ritenest-card-bg); /* Lighter green for cards */
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease-in-out, border-color 0.3s ease;
+            border: 1px solid var(--ritenest-border);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .brand-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2), 0 0 25px rgba(52, 211, 153, 0.5);
+            border-color: var(--ritenest-accent);
+        }
+        .brand-card h4 {
+            font-size: 1.8rem; /* Larger brand name */
+            font-weight: 700;
+            color: var(--ritenest-primary); /* Deep green for brand name */
+            margin-bottom: 0.75rem;
+        }
+        .brand-card p {
+            font-size: 1rem;
+            color: var(--ritenest-muted-text);
+        }
+        .brand-card ul {
+            list-style-type: disc;
+            list-style-position: inside;
+            margin-left: 1rem;
+            color: var(--ritenest-muted-text);
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+        .brand-card ul li {
+            margin-bottom: 0.25rem;
+        }
+        .brand-card .primary-btn {
+            margin-top: 1.5rem;
+            align-self: flex-start; /* Align button to start of card */
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 25px;
+        }
+
+        /* Footer - Styled like RiteNest footer */
+        footer {
+            background-color: var(--ritenest-primary); /* Deep green footer */
+            color: #d1fae5;
+            padding: 2.5rem;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            box-shadow: inset 0 5px 15px rgba(0,0,0,0.2);
+            text-align: center;
+            margin-top: auto; /* Push footer to bottom */
+        }
+        footer p {
+            color: #d1fae5;
+        }
+        footer p.opacity-70 {
+            color: #a7f3d0; /* Lighter green for subtle text */
+        }
+
+        /* Keyframe animations */
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col">
 
-    <header class="header-bg text-white py-6 shadow-lg">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl font-extrabold">
+    <header class="py-6 px-6 md:px-12 text-center shadow-lg">
+        <div class="container mx-auto">
+            <h1 class="font-extrabold tracking-tight">
                 ☯ FAA.ZONE™ Ritual & Culture Sector
             </h1>
-            <p class="text-lg opacity-90 mt-2">Connecting Heritage, Belief, and Digital Protocols</p>
+            <p class="opacity-90 mt-2">Connecting Heritage, Belief, and Digital Protocols</p>
             <nav class="mt-4">
-                <a href="../../admin-portal.html" class="text-white hover:text-amber-200 transition-colors mx-3 text-lg">&larr; Back to Admin Portal</a>
+                <a href="../../admin-portal.html" class="text-white hover:text-ritenest-accent transition-colors mx-3 text-lg">&larr; Back to Admin Portal</a>
             </nav>
         </div>
     </header>
 
-    <section class="bg-gray-100 py-16 md:py-24 text-center hero-section-with-canvas">
+    <section class="py-16 md:py-24 text-center hero-section-with-canvas">
         <canvas id="ritual-pulse-ant-canvas" class="hero-canvas-overlay"></canvas>
 
         <div class="max-w-4xl mx-auto px-4 hero-content-z-2">
-            <h2 class="text-5xl md:text-6xl font-extrabold mb-6 gradient-heading leading-tight">
+            <h2 class="font-extrabold mb-6 gradient-heading leading-tight">
                 Preserving & Advancing Global Rituals
             </h2>
-            <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto">
+            <p class="mb-8 max-w-2xl mx-auto">
                 The Ritual & Culture sector within FAA.ZONE™ is dedicated to digitally preserving, managing, and facilitating cultural heritage, traditions, and belief systems through secure and ethical protocols.
             </p>
             <a href="dashboard.html" class="inline-block px-10 py-4 primary-btn font-bold rounded-full text-lg shadow-xl hover:shadow-2xl">
                 Dashboard
             </a>
-            <a href="subnodes/index.html" class="inline-block px-10 py-4 bg-amber-700 hover:bg-amber-800 text-white font-bold rounded-full text-lg shadow-xl hover:shadow-2xl ml-4">
+            <a href="subnodes/index.html" class="inline-block px-10 py-4 bg-ritenest-secondary hover:bg-ritenest-accent text-white font-bold rounded-full text-lg shadow-xl hover:shadow-2xl ml-4">
                 Explore Sub-Nodes <i class="fas fa-arrow-right ml-2"></i>
             </a>
         </div>
     </section>
 
-    <section class="py-12 bg-white">
+    <section class="metadata-section">
         <div class="max-w-7xl mx-auto px-4">
-            <h3 class="text-3xl font-bold text-center mb-8 text-gray-800">Sector Overview Metadata</h3>
+            <h3 class="text-3xl font-bold text-center mb-8 text-ritenest-dark-text">Sector Overview Metadata</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-                <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
-                    <p class="text-sm text-gray-500">Monthly Fee</p>
-                    <p class="text-2xl font-bold text-amber-700">$68</p>
+                <div class="metadata-card">
+                    <p class="text-sm">Monthly Fee</p>
+                    <p class="text-2xl font-bold text-ritenest-primary">$68</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
-                    <p class="text-sm text-gray-500">Annual Fee</p>
-                    <p class="text-2xl font-bold text-amber-700">$725</p>
+                <div class="metadata-card">
+                    <p class="text-sm">Annual Fee</p>
+                    <p class="text-2xl font-bold text-ritenest-primary">$725</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
-                    <p class="text-sm text-gray-500">Security Rating</p>
-                    <p class="text-2xl font-bold text-green-600">FAA-SEC B+</p>
+                <div class="metadata-card">
+                    <p class="text-sm">Security Rating</p>
+                    <p class="text-2xl font-bold text-ritenest-accent">FAA-SEC B+</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
-                    <p class="text-sm text-gray-500">Deployment Zone</p>
-                    <p class="text-xl font-bold text-gray-800">Zone R.5</p>
+                <div class="metadata-card">
+                    <p class="text-sm">Deployment Zone</p>
+                    <p class="text-xl font-bold text-ritenest-dark-text">Zone R.5</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
-                    <p class="text-sm text-gray-500">VaultID</p>
-                    <p class="text-xl font-bold text-gray-800">RITL-VAULT-2345</p>
+                <div class="metadata-card">
+                    <p class="text-sm">VaultID</p>
+                    <p class="text-xl font-bold text-ritenest-dark-text">RITL-VAULT-2345</p>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200">
-                    <p class="text-sm text-gray-500">Signal Layer</p>
-                    <p class="text-xl font-bold text-gray-800">SpiritGrid v2.6</p>
+                <div class="metadata-card">
+                    <p class="text-sm">Signal Layer</p>
+                    <p class="text-xl font-bold text-ritenest-dark-text">SpiritGrid v2.6</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="sector-brands" class="py-16 md:py-24 bg-white">
+    <section id="sector-brands">
         <div class="max-w-7xl mx-auto px-4">
-            <h3 class="text-4xl md:text-5xl font-extrabold text-center mb-12 gradient-heading">Core Brands & Sub-Nodes</h3>
-            <p class="text-center text-lg text-gray-700 mb-10 max-w-3xl mx-auto">
-                Each sub-node of the CrateJudge™ Core Protocol offers specialized functionality to empower your professional services.
+            <h3 class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-ritenest-dark-text">Core Brands & Sub-Nodes</h3>
+            <p class="text-center text-lg mb-10 max-w-3xl mx-auto">
+                Each brand within the Ritual & Culture sector offers specialized functionality and protocols to empower cultural preservation and digital heritage.
             </p>
             <div id="ritual-culture-brands-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                </div>
+                <!-- Brand cards will be dynamically inserted here -->
+            </div>
         </div>
     </section>
 
@@ -150,28 +348,28 @@
     </footer>
 
     <script>
-        // --- Ritual Pulse Ant Animation Logic ---
+        // --- Ritual Pulse Ant Animation Logic (Adapted for RiteNest colors) ---
         class RitualParticle {
             constructor(canvas) {
                 this.canvas = canvas;
                 this.ctx = canvas.getContext('2d');
                 this.reset();
-                this.baseSize = Math.random() * 1.5 + 0.5; // Small grains/rice particles
+                this.baseSize = Math.random() * 1.5 + 0.5;
                 this.pulseSpeed = Math.random() * 0.05 + 0.02;
-                this.colorIndex = Math.floor(Math.random() * 4); // For picking colors
-                // Colors derived from the ritual theme: earthy browns, amber, purple-brown
-                this.colors = ['#8d6e63', '#a1887f', '#795548', '#5d4037']; 
+                this.colorIndex = Math.floor(Math.random() * 4);
+                // Colors derived from RiteNest palette
+                this.colors = ['#047857', '#34d399', '#10b981', '#a7f3d0'];
             }
 
             reset() {
                 this.x = Math.random() * this.canvas.width;
                 this.y = Math.random() * this.canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.5; // Slow, ant-like movement
+                this.vx = (Math.random() - 0.5) * 0.5;
                 this.vy = (Math.random() - 0.5) * 0.5;
-                this.alpha = 0; // Start invisible
-                this.targetAlpha = Math.random() * 0.6 + 0.3; // Fade in to target opacity
+                this.alpha = 0;
+                this.targetAlpha = Math.random() * 0.6 + 0.3;
                 this.fadeInSpeed = 0.01;
-                this.lifespan = Math.random() * 300 + 200; // Longer lifespan
+                this.lifespan = Math.random() * 300 + 200;
                 this.age = 0;
             }
 
@@ -180,29 +378,24 @@
                 this.y += this.vy;
                 this.age++;
 
-                // Fade in
                 if (this.alpha < this.targetAlpha) {
                     this.alpha += this.fadeInSpeed;
                 } else {
-                    // Fade out after reaching peak or after some time
-                    if (this.age > this.lifespan * 0.7) { // Start fading out in last 30% of life
+                    if (this.age > this.lifespan * 0.7) {
                         this.alpha -= 0.005;
                     }
                 }
 
-                // Keep within bounds (bounce)
                 if (this.x < 0 || this.x > this.canvas.width) this.vx *= -1;
                 if (this.y < 0 || this.y > this.canvas.height) this.vy *= -1;
 
-                // Apply pulse effect to size
                 const currentPulseSize = this.baseSize * (1 + Math.sin(this.age * this.pulseSpeed) * 0.5);
 
-                // Respawn if completely faded
                 if (this.alpha <= 0 || this.age > this.lifespan) {
                     this.reset();
                 }
 
-                return currentPulseSize; // Return current size for drawing
+                return currentPulseSize;
             }
 
             draw(currentSize) {
@@ -221,18 +414,16 @@
             ctx: null,
             particles: [],
             animationFrameId: null,
-            numParticles: 150 // Adjust density as needed
+            numParticles: 150
         };
 
         function initRitualPulseAnt(canvasId) {
             ritualPulseCanvas.canvas = document.getElementById(canvasId);
             if (ritualPulseCanvas.canvas) {
                 ritualPulseCanvas.ctx = ritualPulseCanvas.canvas.getContext('2d');
-                // Set canvas dimensions to fill parent
                 ritualPulseCanvas.canvas.width = ritualPulseCanvas.canvas.offsetWidth;
                 ritualPulseCanvas.canvas.height = ritualPulseCanvas.canvas.offsetHeight;
 
-                // Populate particles
                 for (let i = 0; i < ritualPulseCanvas.numParticles; i++) {
                     ritualPulseCanvas.particles.push(new RitualParticle(ritualPulseCanvas.canvas));
                 }
@@ -254,12 +445,10 @@
             ritualPulseCanvas.animationFrameId = requestAnimationFrame(startRitualPulseAnimation);
         }
 
-        // Add resize listener to redraw canvas on window resize
         window.addEventListener('resize', () => {
             if (ritualPulseCanvas.canvas) {
                 ritualPulseCanvas.canvas.width = ritualPulseCanvas.canvas.offsetWidth;
                 ritualPulseCanvas.canvas.height = ritualPulseCanvas.canvas.offsetHeight;
-                // Re-initialize particles to distribute them evenly in new size
                 ritualPulseCanvas.particles = [];
                 for (let i = 0; i < ritualPulseCanvas.numParticles; i++) {
                     ritualPulseCanvas.particles.push(new RitualParticle(ritualPulseCanvas.canvas));
@@ -267,50 +456,84 @@
             }
         });
 
+        // Data for Ritual & Culture Brands and their Sub-Nodes
+        const ritualCultureBrands = [
+            'RiteNest™', 'PulseSpirit™', 'ClanScroll™', 'CultureGrid™', 'MythLoop™',
+            'AuraDrop™', 'CeremPath™', 'EchoGlyph™', 'TradVault™', 'LineageClaim™',
+            'SymbolMap™', 'AncestorSync™', 'SoulPanel™', 'ClanRoot™', 'EchoRitual™',
+            'TotemCast™', 'RiteClaim™', 'GlyphVault™', 'CultureNest™', 'SpiritBeam™'
+        ];
+        const ritualCultureSubNodes = [
+            ['TotemTrack', 'VaultSpirit', 'GlyphTag', 'ScrollLoop'], // RiteNest™ sub-nodes
+            ['ClanPath', 'EchoTotem', 'PulseMyth', 'ScrollClaim'], // PulseSpirit™ sub-nodes
+            ['CultureCast', 'VaultClaim', 'RiteMark', 'TradEcho'], // ClanScroll™ sub-nodes
+            ['LoopTotem', 'ClaimClan', 'VaultGlyph', 'SymbolTrack'], // CultureGrid™ sub-nodes
+            ['MythDrop', 'EchoPath', 'ScrollProof', 'RitualGrid'], // MythLoop™ sub-nodes
+            ['AuraTrack', 'VaultCast', 'TotemPanel', 'GlyphEcho'],
+            ['CeremSync', 'ClaimRite', 'ScrollVault', 'TotemBeam'],
+            ['GlyphSync', 'SpiritClaim', 'VaultMyth', 'EchoClan'],
+            ['TradPanel', 'LoopClaim', 'MythTrack', 'VaultCulture'],
+            ['LineagePath', 'VaultTag', 'EchoGlyph', 'ScrollCast'],
+            ['SymbolClaim', 'VaultScroll', 'TotemMap', 'ClanNest'],
+            ['AncestorTag', 'VaultLoop', 'ClaimTotem', 'SpiritRoot'],
+            ['EchoRitualX', 'ClaimPanel', 'VaultTotem', 'CultureSync'],
+            ['TotemEcho', 'LoopGlyph', 'VaultClaimX', 'SymbolProof'],
+            ['ClaimCulture', 'VaultTrad', 'SpiritSync', 'EchoCast'],
+            ['GlyphVaultX', 'ScrollTag', 'CultureDrop', 'TotemRoot'],
+            ['NestSpirit', 'PulseClaim', 'VaultEchoX', 'MythPath'],
+            ['BeamLoop', 'VaultSymbol', 'ScrollRite', 'ClanBeam']
+        ];
 
-        // Data for Ritual & Culture (from Admin Portal's ALL_SECTOR_DATA_STATIC)
-        const ritualCultureBrands = ['RiteNest™', 'PulseSpirit™', 'ClanScroll™', 'CultureGrid™', 'MythLoop™','AuraDrop™', 'CeremPath™', 'EchoGlyph™', 'TradVault™', 'LineageClaim™','SymbolMap™', 'AncestorSync™', 'SoulPanel™', 'ClanRoot™', 'EchoRitual™','TotemCast™', 'RiteClaim™', 'GlyphVault™', 'CultureNest™', 'SpiritBeam™'];
-        const ritualCultureSubNodes = [['TotemTrack', 'VaultSpirit', 'GlyphTag', 'ScrollLoop'],['ClanPath', 'EchoTotem', 'PulseMyth', 'ScrollClaim'],['CultureCast', 'VaultClaim', 'RiteMark', 'TradEcho'],['LoopTotem', 'ClaimClan', 'VaultGlyph', 'SymbolTrack'],['MythDrop', 'EchoPath', 'ScrollProof', 'RitualGrid'],['AuraTrack', 'VaultCast', 'TotemPanel', 'GlyphEcho'],['CeremSync', 'ClaimRite', 'ScrollVault', 'TotemBeam'],['GlyphSync', 'SpiritClaim', 'VaultMyth', 'EchoClan'],['TradPanel', 'LoopClaim', 'MythTrack', 'VaultCulture'],['LineagePath', 'VaultTag', 'EchoGlyph', 'ScrollCast'],['SymbolClaim', 'VaultScroll', 'TotemMap', 'ClanNest'],['AncestorTag', 'VaultLoop', 'ClaimTotem', 'SpiritRoot'],['EchoRitualX', 'ClaimPanel', 'VaultTotem', 'CultureSync'],['TotemEcho', 'LoopGlyph', 'VaultClaimX', 'SymbolProof'],['ClaimCulture', 'VaultTrad', 'SpiritSync', 'EchoCast'],['GlyphVaultX', 'ScrollTag', 'CultureDrop', 'TotemRoot'],['NestSpirit', 'PulseClaim', 'VaultEchoX', 'MythPath'],['BeamLoop', 'VaultSymbol', 'ScrollRite', 'ClanBeam']];
 
         document.addEventListener('DOMContentLoaded', () => {
             const container = document.getElementById('ritual-culture-brands-container');
 
-            if (container) { // Ensure container exists before trying to modify it
+            if (container) {
                 if (ritualCultureBrands.length === 0) {
-                    container.innerHTML = '<p class="text-center text-gray-500 col-span-full">No brands currently listed for this sector.</p>';
+                    container.innerHTML = '<p class="text-center text-ritenest-muted-text col-span-full">No brands currently listed for this sector.</p>';
                 } else {
-                    // Ensure subNode arrays are correctly mapped to brands
                     const minLength = Math.min(ritualCultureBrands.length, ritualCultureSubNodes.length);
 
                     for (let i = 0; i < minLength; i++) {
                         const brandName = ritualCultureBrands[i];
-                        const subNodes = ritualCultureSubNodes[i] || []; // Ensure it's an array, even if empty
+                        const subNodes = ritualCultureSubNodes[i] || [];
 
                         const card = document.createElement('div');
-                        card.className = 'bg-white p-6 rounded-lg card-shadow hover:shadow-xl transition-shadow flex flex-col justify-between';
+                        card.className = 'brand-card'; // Use new brand-card class
                         
                         let subNodesHtml = '';
                         if (subNodes.length > 0) {
                             subNodesHtml = `
-                                <ul class="list-disc list-inside ml-4 text-sm text-gray-600 space-y-1 mt-4">
+                                <ul class="list-disc list-inside text-sm text-ritenest-muted-text space-y-1 mt-4">
                                     ${subNodes.map(node => `<li>${node}</li>`).join('')}
                                 </ul>
                             `;
                         } else {
-                            subNodesHtml = '<p class="text-sm text-gray-500 mt-4">No specific sub-nodes listed.</p>';
+                            subNodesHtml = '<p class="text-sm text-ritenest-muted-text mt-4">No specific sub-nodes listed.</p>';
+                        }
+
+                        // Determine the link for the "Discover More" button
+                        let discoverMoreLink = '#'; // Default fallback
+                        if (brandName === 'RiteNest™') {
+                            // If it's RiteNest, link to the RiteNest dashboard
+                            discoverMoreLink = '../../ritenest-dashboard.html'; // Assuming this path from admin-portal context
+                        } else {
+                            // For other brands, create a generic link or a placeholder
+                            // You might want to create a dynamic path based on brandName later
+                            discoverMoreLink = `/${brandName.toLowerCase().replace(/™/g, '').replace(/\s/g, '-')}/index.html`;
                         }
 
                         card.innerHTML = `
                             <div>
-                                <h4 class="text-2xl font-bold text-gray-900 mb-3">${brandName}</h4>
-                                <p class="text-gray-700">
+                                <h4 class="font-bold mb-3">${brandName}</h4>
+                                <p>
                                     A core protocol enabling secure digital interfaces for traditional practices within the Ritual & Culture sector.
                                 </p>
                                 ${subNodesHtml}
                             </div>
-                            <button class="mt-6 self-start px-6 py-2 primary-btn font-semibold rounded-full text-base">
+                            <a href="${discoverMoreLink}" class="mt-6 self-start px-6 py-2 primary-btn font-semibold rounded-full text-base">
                                 Discover More
-                            </button>
+                            </a>
                         `;
                         container.appendChild(card);
                     }
